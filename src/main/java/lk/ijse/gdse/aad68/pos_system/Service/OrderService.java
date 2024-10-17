@@ -10,5 +10,5 @@ public interface OrderService {
     OrderResponse getSelectedOrder(String orderId);
     void updateOrder(String orderId, OrderDTO orderDTO);
 
-    List<OrderDTO> getAllOrders();
+    List<OrderResponse> getAllOrders();
 }

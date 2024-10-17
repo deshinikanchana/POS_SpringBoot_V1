@@ -95,6 +95,17 @@ public class OrderServiceIMPL implements OrderService {
     }
 
     @Override
+    public List<OrderResponse> getAllOrders() {
+        List<OrderResponse> orderList = new ArrayList<>();
+        List<OrderEntity> list1 = ordersDAO.findAll();
+        for(int i =0;i<list1.size();i++){
+           OrderResponse dto = getSelectedOrder(list1.get(i).getOrderId());
+           orderList.add(dto);
+        }
+
+        return orderList;
+    }
+    @Override
     public void updateOrder(String orderId, OrderDTO orderDTO) {
         Optional<OrderEntity> tmpOrderEntity = ordersDAO.findById(orderId);
         if(!tmpOrderEntity.isPresent()){
@@ -126,8 +137,4 @@ public class OrderServiceIMPL implements OrderService {
         }
     }
 
-    @Override
-    public List<OrderDTO> getAllOrders() {
-        return mapping.OrderEntityListToDTOList(ordersDAO.findAll());
-    }
 }

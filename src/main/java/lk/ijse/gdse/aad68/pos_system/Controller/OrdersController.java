@@ -64,7 +64,8 @@ public class OrdersController {
     }
 
     @GetMapping(value = "allOrders",produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<OrderDTO> getAllOrders(){
+    public List<OrderResponse> getAllOrders(){
         return orderService.getAllOrders();
     }
+
 }

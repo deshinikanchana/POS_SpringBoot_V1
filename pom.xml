@@ -16,7 +16,9 @@
         <maven.compiler.source>17</maven.compiler.source>
         <junit.version>5.9.2</junit.version>
         <spring-version>6.1.12</spring-version>
+        <maven.compiler.compilerArgument>-parameters</maven.compiler.compilerArgument>
     </properties>
+
 
     <dependencies>
         <dependency>

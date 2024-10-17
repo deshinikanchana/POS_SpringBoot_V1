@@ -12,6 +12,5 @@ public interface OrderDetailService {
     void deleteDetails(String orderDetailIndex);
     OrderDetailResponse getSelectedDetail(String orderDetailIndex);
     List<OrderDetailDTO> getAllDetails ();
-
-
+    List<OrderDetailDTO> getOrderDetailsByOrderId(String orderId);
 }

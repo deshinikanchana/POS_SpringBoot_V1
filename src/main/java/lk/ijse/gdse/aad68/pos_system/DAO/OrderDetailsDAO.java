@@ -16,4 +16,7 @@ public interface OrderDetailsDAO extends JpaRepository<OrderDetailEntity,String>
         @Query("SELECT o.orderDetailIndex FROM OrderDetailEntity o WHERE o.order.orderId = :orderId AND o.item.itemCode = :itemCode")
         String findIndex(@Param("orderId") String orderId, @Param("itemCode") String itemCode);
 
+        @Query("SELECT od FROM OrderDetailEntity od WHERE od.order.orderId = :orderId")
+        List<OrderDetailEntity> findByOrderId(@Param("orderId") String orderId);
+
 }

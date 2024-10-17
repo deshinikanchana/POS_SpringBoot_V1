@@ -92,4 +92,10 @@ public class OrderDetailServiceIMPL implements OrderDetailService {
     public List<OrderDetailDTO> getAllDetails() {
         return mapping.OrderDetailEntityListToDTOList(orderDetailsDAO.findAll());
     }
+
+    @Override
+    public List<OrderDetailDTO> getOrderDetailsByOrderId(String orderId) {
+        List<OrderDetailEntity> entityList = orderDetailsDAO.findByOrderId(orderId);
+        return mapping.OrderDetailEntityListToDTOList(entityList);
+    }
 }
